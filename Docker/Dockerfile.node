@@ -1,0 +1,47 @@
+# parent image
+FROM ubuntu:focal
+ARG DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get install -y ca-certificates
+
+RUN apt-get update && apt-get upgrade -y
+
+# install needed packages
+RUN apt-get update && apt-get install -y \
+    net-tools \
+    iputils-ping \
+    iproute2 \
+    telnet telnetd \
+    iperf \
+    tcpdump \
+    build-essential \
+    cmake \
+    git \
+    wget \
+    python3 \
+    python3-pip \ 
+    tcpreplay \
+    libpcap-dev \
+    htop \ 
+    curl \
+    firefox \
+    nano \
+    tshark \
+    iptables \
+    ffmpeg \
+    nginx \
+    nodejs \
+    npm \
+    unzip \
+    coturn \
+    ethtool \
+    python-tk \
+    hping3 \
+    libopus-dev \
+    psmisc \
+    libvpx-dev
+
+RUN pip3 install scapy matplotlib pyx cryptography vpython numpy scipy tqdm pyftpdlib selenium aiosmtpd python-ffmpeg-video-streaming pandas hurst psrecord aiohttp aiortc
+
+# run bash interpreter
+CMD /bin/bash

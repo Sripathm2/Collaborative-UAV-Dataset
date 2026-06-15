@@ -1,0 +1,11 @@
+*.png
+*.csv
+*.json
+*.zip
+*.pyc
+UAV-cas-dataset/
+Datasets/
+results/
+results1/
+Cloudlab-utilities/
+job.sh
